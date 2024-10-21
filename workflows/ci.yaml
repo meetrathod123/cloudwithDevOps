@@ -1,0 +1,11 @@
+name: CI  # Name of the pipeline
+on: [push]  # Trigger the workflow when a push is made to the repository
+
+jobs:
+  test:  # Job name
+    runs-on: ubuntu-latest  # Specify the virtual machine to run the job (use an Ubuntu-based machine)
+    steps:
+    - uses: actions/checkout@v2  # Step 1: Check out your code from GitHub
+    - name: Run PowerShell script  # Step 2: Run the PowerShell script
+      run: pwsh ./create-azure-vm.ps1  # The script to be executed
+
